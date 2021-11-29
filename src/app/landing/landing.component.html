@@ -1,0 +1,24 @@
+<div class="landing">
+  <div class="chat-feed">
+    <app-Channel *ngFor="let item of posts" [channel]="item"></app-Channel>
+
+   
+    
+  </div>
+</div>
+
+<div *ngFor="let item of messages">
+
+  <p>
+
+    USERNAME: {{ item.username }}<br />
+
+    MESSAGE: {{ item.message }}
+    
+
+  </p>
+
+</div>
+
+
+
