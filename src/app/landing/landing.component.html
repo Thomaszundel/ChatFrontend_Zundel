@@ -7,18 +7,12 @@
   </div>
 </div>
 
-<div *ngFor="let item of messages">
-
-  <p>
-
-    USERNAME: {{ item.username }}<br />
-
-    MESSAGE: {{ item.message }}
-    
-
-  </p>
-
+<div>
+  <a [routerLink]="['/post/create']">Click to Post to Channel: "tzundel"</a>
+  
 </div>
+
+
 
 
 

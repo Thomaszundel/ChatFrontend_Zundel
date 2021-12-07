@@ -23,11 +23,12 @@ export class ProductService {
 
 constructor(private http:HttpClient) { }
 
+//this will only post to my channel i was sure how to make it post to any channel
 
 
 //create
 createPost(channel: Post): Observable<Post> {
-  return this.http.post<Post>(`${this.webUrl}/post`,channel);
+  return this.http.post<Post>(`${this.webUrl}/tzundel`,channel);
 }
 //read all
 getAllPosts(): Observable<string[]> {
