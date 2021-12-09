@@ -1,6 +1,6 @@
 import { utf8Encode } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../product.service';
 @Component({
   selector: 'app-post-create',
@@ -8,17 +8,20 @@ import { ProductService } from '../product.service';
   styleUrls: ['./post-create.component.scss']
 })
 export class PostCreateComponent implements OnInit {
-  postForm: FormGroup = new FormGroup({});
+  postForm: FormGroup = this.fb.group({
+    title:['',Validators.required],
+    body:['',Validators.required]
+  })
 
-  constructor(private post: ProductService) {
+  constructor(private post: ProductService, private fb: FormBuilder) {
     this.initForm();
    }
 
   initForm(): void{
-    this.postForm = new FormGroup({
-      title: new FormControl('username here'),
-      body: new FormControl('message here')
-    });
+    this.postForm = this.fb.group({
+      title:['',Validators.required],
+      body:['',Validators.required]
+    })
   }
 
   ngOnInit() {

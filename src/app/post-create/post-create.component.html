@@ -2,9 +2,10 @@
   <p>Create new message for Channel: "tzundel"</p>
 </div>
 <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
-    <label>username</label><br>
+    <label>Username:</label><br>
     <input type="text" id="title" formControlName="title"><br>
-    <label>message</label><br>
+    <label>Message:</label><br>
     <input type="text" id="body" formControlName="body"><br>
-    <input type="submit">
+    <input type="submit" [disabled]="!postForm.valid">
+    <p>Form Status: {{postForm.status}}</p>
 </form>
